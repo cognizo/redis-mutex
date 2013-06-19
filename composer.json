@@ -1,0 +1,20 @@
+{
+	"name": "cognizo/redis-mutex",
+	"type": "library",
+	"description": "A simple Redis-backed mutex lock.",
+	"homepage": "https://github.com/cognizo/redis-mutex",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Graham Floyd",
+			"email": "gfloyd@catsone.com"
+		}
+	],
+	"require": {
+        "php": ">=5.3.0",
+		"colinmollenhour/credis": "1.2"
+	},
+	"autoload": {
+		"psr-0": { "Cognizo": "src/" }
+	}
+}
