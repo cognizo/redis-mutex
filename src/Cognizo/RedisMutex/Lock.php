@@ -41,10 +41,10 @@ class Lock
      * @return bool
      */
     public static function get($key, $timeout = false, $maxLockTime = self::MAX_LOCK_TIME)
-	{
+    {
         $key = self::KEY_PREFIX . ":{$key}";
 
-		$start = time();
+        $start = time();
 
         self::$_tokens[$key] = uniqid('', true);
 
@@ -71,7 +71,7 @@ class Lock
         while (is_numeric($timeout) && time() < $start + $timeout);
 
         return false;
-	}
+    }
 
     /**
      * Release a lock.
