@@ -50,7 +50,7 @@ class Lock
         {
             $result = self::_getRedis()->setNx($key, self::$_tokens[$key]);
 
-            if ($result === 1)
+            if ($result)
             {
                 if (is_numeric($maxLockTime))
                 {
@@ -83,7 +83,7 @@ class Lock
 
         $result = self::_getRedis()->get($key);
 
-        if ($result === 0)
+        if (!$result)
         {
             unset(self::$_tokens[$key]);
 
